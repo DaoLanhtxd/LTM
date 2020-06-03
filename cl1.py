@@ -11,7 +11,7 @@ def main():
       sys.exit()
    data = soc.recv(51200)
    print (data.decode())
-   if(data.decode()=='429 Too Many Requests'):
+   if(data.decode()=='429 Too Many Requests'or data.decode()=='503 Service Unavailable'):
       soc.close()
    else:
       print("Please enter 'END'to exit")
